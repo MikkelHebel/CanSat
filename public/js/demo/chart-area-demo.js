@@ -1,4 +1,4 @@
-// Set new default font family and font color to mimic Bootstrap's default styling
+  // Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
@@ -36,14 +36,14 @@ var myLineChart = new Chart(ctx, {
     datasets: [{
       label: "Temperature",
       lineTension: 0.3,
-      backgroundColor: "rgba(78, 115, 223, 0.05)",
-      borderColor: "rgba(78, 115, 223, 1)",
+      backgroundColor: "rgba(231, 59, 59, 0.05)",
+      borderColor: "rgba(231, 59, 59, 1)",
       pointRadius: 3,
-      pointBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointBorderColor: "rgba(78, 115, 223, 1)",
+      pointBackgroundColor: "rgba(231, 59, 59, 1)",
+      pointBorderColor: "rgba(231, 59, 59, 1)",
       pointHoverRadius: 3,
-      pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+      pointHoverBackgroundColor: "rgba(231, 59, 59, 1)",
+      pointHoverBorderColor: "rgba(231, 59, 59, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
       data: [0, 0, 27, 28, 25.7, 26, 26.1, 26.8, 28, 27, 26, 24],
