@@ -5,7 +5,7 @@ const data = require("./routes/data.js")
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
-  .use("/data.js",data)
+  .use("/",data)
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
