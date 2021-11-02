@@ -19,7 +19,7 @@ router.get("/all", async (req, res) => {
     const result = await client.query("SELECT * FROM temperature");
 
     // Respond with DB results as json
-    if (result) res.json({salaries: result.rows});else res.json({salaries: null});
+    if (result) res.json({temperature: result.rows});else res.json({salaries: null});
 
     // Release connection
     client.release();
