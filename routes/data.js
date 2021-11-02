@@ -16,7 +16,7 @@ router.get("/all", async (req, res) => {
     const client = await pool.connect();
 
     // Run query
-    const result = await client.query("SELECT * FROM salaries");
+    const result = await client.query("SELECT * FROM temperature");
 
     // Respond with DB results as json
     if (result) res.json({salaries: result.rows});else res.json({salaries: null});
