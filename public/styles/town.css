@@ -1,0 +1,58 @@
+:root {
+    --canvas-height: 700px;
+    --canvas-width: 1200px;
+}
+
+ /* *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} 
+
+/*   Title skrift */
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/*   Title skrift */
+.title .content h3{
+    font-size: 3.3rem;
+    color:#333;
+}
+
+/*   Title Span skrift */
+.title .content h3 span{
+    color:#F83292;
+}
+
+/*   Canvas'et som roboten og byen skal være på (makes canvas responsive) */
+main {
+    grid-row: 2;
+    grid-column: 2;
+    height: var(--canvas-height);
+    width: var(--canvas-width);
+    background: #fff;
+    border-radius: 25px;
+    border-style: solid;
+    border-color:#2B86C5;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#msgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 1em;
+    width: 100%;
+    margin: 0 2em;
+}

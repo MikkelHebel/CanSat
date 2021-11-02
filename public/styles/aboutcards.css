@@ -1,0 +1,85 @@
+/* *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*   Containeren som indeholder alle 3 kort (makes about cards responsive) */
+.container{
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+  width:auto;
+  height:auto;
+}
+
+/*   Selve kort størelse/form og farve */
+.card{
+	width: 320px;
+	height: 600px;
+	padding: 40px 30px;
+	margin: 10px;
+	border-radius: 1rem;
+  background-color: #FF3CAC;
+  background-image: -webkit-linear-gradient(225deg, #FF3CAC 0%, #784BA0 40%, #2B86C5 100%);
+  background-image: -moz-linear-gradient(225deg, #FF3CAC 0%, #784BA0 40%, #2B86C5 100%);
+  background-image: -o-linear-gradient(225deg, #FF3CAC 0%, #784BA0 40%, #2B86C5 100%);
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 40%, #2B86C5 100%);
+
+}
+
+/*   Billede box design */
+.imgBox{
+	width: 120px;
+	height: 120px;
+	border: 1px solid #eaeff5;
+	margin: 0 auto;
+	border-radius: 100px;
+	overflow: hidden;
+
+}
+
+/*   Fisker billede størelse så det passer til .imgBox */
+.imgBox img{
+	width: inherit;
+	height: inherit;
+}
+
+/*   h4 overskift */
+h4{
+	padding: 10px;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+/*   h5 overskrift */
+h5{
+	text-align: center;
+	color: #ffffff;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 1rem;
+}
+
+/*   brødteks størelse 1 */
+p{
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 10px 0;
+	line-height: 1.5rem;
+}
+
+/*   brødteskt størelse 2 */
+p2{
+	color: #000;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 10px 0;
+	line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+}

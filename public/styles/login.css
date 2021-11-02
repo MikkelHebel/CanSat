@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+/*   Design boksen omkring sign in form */
+.login {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+  background: white;
+  box-shadow: 0px 0px 10px #cfd8dc;
+  padding: 1rem 0;
+  border-radius: 0.2rem;
+  position: relative;
+  top: 50px;
+  bottom: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*   Tekst felter */
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+  height: 30%;
+}
+
+/*   Overskift */
+h2 {
+	text-align: center;
+}
+
+/*   Tekst */
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+/*   Skift under Sign in */
+span {
+	font-size: 12px;
+}
+
+/*   Forgot password link */
+a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+/*   Sign in button */
+.item-sign-in a {
+	border-radius: 20px;
+	border: 1px solid #F83292;
+	background-color: #F83292;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.item-sign-in {
+  list-style: none;
+}
