@@ -1,4 +1,4 @@
-/*   Features box create */
+/*   Chart box fix */
 .data {
     flex:1 1 30rem;
     background:#fff;
@@ -8,4 +8,8 @@
     margin:1.5rem;
     padding:3rem 2rem;
     text-align: center;
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
