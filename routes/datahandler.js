@@ -17,7 +17,7 @@ router.get("/get", async (req, res) => {
 
     client
         // Send query to database
-        .query("SELECT * FROM example")
+        .query("SELECT * FROM temperature")
 
         // Handle results
         .then((result) => {
