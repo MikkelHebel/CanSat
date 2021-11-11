@@ -12,18 +12,7 @@ const data = {
     label: 'Temperature',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    const client = await pool.connect();
-
-    client
-        // Send query to database
-        .query("SELECT * FROM temperature")
-
-        // Handle results
-        .then((result) => {
-            const results = { data: result ? result.rows : null };
-            res.send(results);
-        })
-    //data: [0, 10, 5, 2, 20, 30, 45],
+    data: [0, 10, 5, 2, 20, 30, 45],
   }]
 };
 
