@@ -28,7 +28,7 @@ router.get("/get", async (req, res) => {
         // Handle errors
         .catch((err) => {
             console.error(err);
-            res.send("Error " + err);
+            res.send("Error: " + err);
         })
 
         // Close connection
@@ -47,7 +47,7 @@ router.get("/insert", async (req, res) => {
 
     // Prepare query for database
     const query = {
-        text: "INSERT INTO data(temperature,humidity,pressure,altitude) VALUES (?,?,?,?);",
+        text: "INSERT INTO data(Temperature,Humidity,Pressure,Altitude) VALUES (?,?,?,?);",
         values: [temperature, humidity, pressure, altitude]
     };
     console.log(query);
@@ -67,7 +67,7 @@ router.get("/insert", async (req, res) => {
         // Handle errors
         .catch((err) => {
             console.error(err);
-            res.send("Error " + err);
+            res.send("Error: " + err);
         })
 
         // Close connection
