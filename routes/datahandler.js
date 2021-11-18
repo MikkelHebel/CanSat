@@ -38,7 +38,11 @@ router.get("/get", async (req, res) => {
 // DEFINITON TO INSERT DATA
 router.get("/insert", async (req, res) => {
     // Check value in query string
-    const query_value = req.query;
+    //const query_value = req.query;
+    const req.query.temperature = req.query.temperature;
+    const req.query.humidity = req.query.humidity;
+    const req.query.pressure = req.query.pressure;
+    const req.query.altitude = req.query.altitude;
     if (query_value === undefined) return res.send("Error: Value in query string is not defined.");
 
     // Prepare query for database
