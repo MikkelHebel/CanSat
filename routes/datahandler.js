@@ -47,7 +47,7 @@ router.get("/insert", async (req, res) => {
 
     // Prepare query for database
     const query = {
-        text: "INSERT INTO data(Temperature,Humidity,Pressure,Altitude) VALUES (temperature,humidity,pressure,altitude);",
+        text: "INSERT INTO data(Temperature,Humidity,Pressure,Altitude) VALUES (20.1,1,1,1);",
         values: []
     };
     console.log(query);
