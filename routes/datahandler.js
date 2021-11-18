@@ -57,7 +57,8 @@ router.get("/insert", async (req, res) => {
 
     client
         // Send query to database
-        .query(query)
+        //.query(query)
+        .query("INSERT INTO data(Temperature,Humidity,Pressure,Altitude) VALUES (20.1,1,2,1000);")
 
         // Handle results (just send ok msg)
         .then(() => {
