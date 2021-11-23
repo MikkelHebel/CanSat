@@ -1,8 +1,8 @@
-fetch('/data/get')
-  .then(response => response.json())
-  .then(data => console.log(data));
+//fetch('/data/get')
+//  .then(response => response.json())
+//  .then(data => console.log(data));
 
-function startFetch({tempChart}) {
+function startFetch('/data/get') {
   const {min, max} = tempChart.scales.x;
   clearTimeout(timer);
   timer = setTimeout(() => {
@@ -36,11 +36,11 @@ const config = {
   type: 'line',
   data: {
     datasets: [{
-      label: 'My First dataset',
-      borderColor: Utils.randomColor(0.4),
-      backgroundColor: Utils.randomColor(0.1),
-      pointBorderColor: Utils.randomColor(0.7),
-      pointBackgroundColor: Utils.randomColor(0.5),
+      label: 'Temperature',
+      borderColor: randomColor(0.4),
+      backgroundColor: randomColor(0.1),
+      pointBorderColor: randomColor(0.7),
+      pointBackgroundColor: randomColor(0.5),
       pointBorderWidth: 1,
       data: fetchData(start, end),
     }]
