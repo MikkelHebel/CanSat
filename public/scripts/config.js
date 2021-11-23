@@ -2,16 +2,7 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
-function startFetch({tempChart}) {
-  const {min, max} = tempChart.scales.x;
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    console.log('Fetched data between ' + min + ' and ' + max);
-    tempChart.data.datasets[0].data = fetchData(min, max);
-    tempChart.stop(); // make sure animations are not running
-    tempChart.update('none');
-  }, 500);
-}
+hej
 
 const labels = [
   '00:05',
@@ -37,6 +28,7 @@ const config = {
   data: data,
   options: {}
 };
+
 
 const tempChart = new Chart(
   document.getElementById('myChart'),
