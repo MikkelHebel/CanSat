@@ -52,7 +52,7 @@ for (let x = start; x <= end; x += 1000) {
 function fetchData(x1, x2) {
   console.log("fetchData has been called!");
   const step = Math.max(1, Math.round((x2 - x1) / 100000));
-  const data = fetch('/data/get').then(response => response.json());
+  const data = fetch('/data/get').then(response => response.json()).then(data => console.log(data));
   console.log("Printed data:");
   console.log(data);
   //const data = [];
