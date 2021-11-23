@@ -53,6 +53,8 @@ function fetchData(x1, x2) {
   console.log("fetchData has been called!");
   const step = Math.max(1, Math.round((x2 - x1) / 100000));
   const data = fetch('/data/get');
+  console.log("Printed data:");
+  console.log(data);
   //const data = [];
   let i = 0;
   while (i < allData.length && allData[i].x < x1) {
