@@ -29,6 +29,7 @@ const zoomOptions = {
 
 let timer;
 function startFetch({chart}) {
+  console.log("startFetch has been called!");
   const {min, max} = chart.scales.x;
   clearTimeout(timer);
   timer = setTimeout(() => {
@@ -49,6 +50,7 @@ for (let x = start; x <= end; x += 1000) {
 }
 
 function fetchData(x1, x2) {
+  console.log("fetchData has been called!");
   const step = Math.max(1, Math.round((x2 - x1) / 100000));
   const data = [];
   let i = 0;
@@ -143,9 +145,10 @@ const config = {
   type: 'line',
   data: fetchData(start, end),
   options: {}
+  console.log("Config loaded!");
 };
 
-const chart = new Chart(
+const tempChart = new Chart(
   document.getElementById('myChart'),
   config
 );
