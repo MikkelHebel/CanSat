@@ -44,10 +44,10 @@ const config = {
   data: {
     datasets: [{
       label: 'Temperature',
-      borderColor: rgb(255, 99, 132),
-      backgroundColor: rgb(255, 99, 132),
-      pointBorderColor: randomColor(0.7),
-      pointBackgroundColor: randomColor(0.5),
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: 'randomColor(0.7)',
+      pointBackgroundColor: 'Utils.randomColor(0.5)',
       pointBorderWidth: 1,
       data: fetchData(start, end),
     }]
