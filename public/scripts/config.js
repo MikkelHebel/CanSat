@@ -62,6 +62,31 @@ function fetchData(x1, x2) {
   return data;
 }
 
+const scales = {
+  x: {
+    position: 'bottom',
+    min: start,
+    max: end,
+    type: 'time',
+    ticks: {
+      autoSkip: true,
+      autoSkipPadding: 50,
+      maxRotation: 0
+    },
+    time: {
+      displayFormats: {
+        hour: 'HH:mm',
+        minute: 'HH:mm',
+        second: 'HH:mm:ss'
+      }
+    }
+  },
+  y: {
+    type: 'linear',
+    position: 'left',
+  },
+};
+
 const config = {
   type: 'line',
   data: {
@@ -93,31 +118,6 @@ const config = {
       }
     }
   }
-};
-
-const scales = {
-  x: {
-    position: 'bottom',
-    min: start,
-    max: end,
-    type: 'time',
-    ticks: {
-      autoSkip: true,
-      autoSkipPadding: 50,
-      maxRotation: 0
-    },
-    time: {
-      displayFormats: {
-        hour: 'HH:mm',
-        minute: 'HH:mm',
-        second: 'HH:mm:ss'
-      }
-    }
-  },
-  y: {
-    type: 'linear',
-    position: 'left',
-  },
 };
 
 /* const labels = [
