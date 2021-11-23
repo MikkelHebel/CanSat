@@ -87,7 +87,7 @@ const scales = {
   },
 };
 
-const config = {
+/*const config = {
   type: 'line',
   data: {
     datasets: [{
@@ -118,7 +118,7 @@ const config = {
       }
     }
   }
-};
+};*/
 
 /* const labels = [
   '00:05',
@@ -137,15 +137,15 @@ const data = {
     borderColor: 'rgb(255, 99, 132)',
     data: [],
   }]
-};
+};*/
 
 const config = {
   type: 'line',
   data: data,
   options: {}
-};*/
+};
 
-const chart = new Chart(
+const tempChart = new Chart(
   document.getElementById('myChart'),
   config
 );
