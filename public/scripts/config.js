@@ -34,11 +34,63 @@ const data = {
 
 const config = {
   type: 'line',
-  data: data,
-  options: {}
+  data: {
+    datasets: [{
+      label: 'My First dataset',
+      borderColor: Utils.randomColor(0.4),
+      backgroundColor: Utils.randomColor(0.1),
+      pointBorderColor: Utils.randomColor(0.7),
+      pointBackgroundColor: Utils.randomColor(0.5),
+      pointBorderWidth: 1,
+      data: fetchData(start, end),
+    }]
+  },
+  options: {
+    scales: scales,
+    plugins: {
+      zoom: zoomOptions,
+      title: {
+        display: true,
+        position: 'bottom',
+        text: (ctx) => zoomStatus(ctx.chart)
+      }
+    },
+    transitions: {
+      zoom: {
+        animation: {
+          duration: 100
+        }
+      }
+    }
+  }
 };
 
 const tempChart = new Chart(
   document.getElementById('myChart'),
   config
 );
+
+const zoomOptions = {
+  limits: {
+    x: {min: 'original', max: 'original', minRange: 60 * 1000},
+  },
+  pan: {
+    enabled: true,
+    mode: 'x',
+    modifierKey: 'ctrl',
+    onPanComplete: startFetch
+  },
+  zoom: {
+    wheel: {
+      enabled: true,
+    },
+    drag: {
+      enabled: true,
+    },
+    pinch: {
+      enabled: true
+    },
+    mode: 'x',
+    onZoomComplete: startFetch
+  }
+};
