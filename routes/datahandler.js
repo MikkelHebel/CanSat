@@ -50,16 +50,6 @@ router.get("/insert", async (req, res) => {
         text: "INSERT INTO data(Temperature,Humidity,Pressure,Altitude) VALUES ($1, $2, $3, $4);",
         values: [temperature, humidity, pressure, altitude]
     };
-    console.log("Temperature");
-    console.log(temperature);
-    console.log("Humidity:");
-    console.log(humidity);
-    console.log("Pressure:");
-    console.log(pressure);
-    console.log("Altitude");
-    console.log(altitude);
-    console.log("Query");
-    console.log(query);
 
     // Wait for database connection
     const client = await pool.connect();
