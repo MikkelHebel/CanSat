@@ -39,6 +39,29 @@ function startFetch({chart}) {
   }, 500);
 }
 
+const start = new Date().valueOf();
+const end = start + 1000 * 60 * 60 * 24 * 2;
+const allData = [];
+let y = 100;
+for (let x = start; x <= end; x += 1000) {
+  y += 5 - Math.random() * 10;
+  allData.push({x, y});
+}
+
+function fetchData(x1, x2) {
+  const step = Math.max(1, Math.round((x2 - x1) / 100000));
+  const data = [];
+  let i = 0;
+  while (i < allData.length && allData[i].x < x1) {
+    i++;
+  }
+  while (i < allData.length && allData[i].x <= x2) {
+    data.push(allData[i]);
+    i += step;
+  }
+  return data;
+}
+
 const config = {
   type: 'line',
   data: {
@@ -71,29 +94,6 @@ const config = {
     }
   }
 };
-
-const start = new Date().valueOf();
-const end = start + 1000 * 60 * 60 * 24 * 2;
-const allData = [];
-let y = 100;
-for (let x = start; x <= end; x += 1000) {
-  y += 5 - Math.random() * 10;
-  allData.push({x, y});
-}
-
-function fetchData(x1, x2) {
-  const step = Math.max(1, Math.round((x2 - x1) / 100000));
-  const data = [];
-  let i = 0;
-  while (i < allData.length && allData[i].x < x1) {
-    i++;
-  }
-  while (i < allData.length && allData[i].x <= x2) {
-    data.push(allData[i]);
-    i += step;
-  }
-  return data;
-}
 
 const scales = {
   x: {
