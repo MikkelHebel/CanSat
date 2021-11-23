@@ -87,15 +87,6 @@ const scales = {
   },
 };
 
-const data = {
-  datasets: [{
-    label: 'Temperature',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [],
-  }]
-};
-
 const config = {
   type: 'line',
   data: {
@@ -106,7 +97,7 @@ const config = {
       pointBorderColor: 'randomColor(0.7)',
       pointBackgroundColor: 'Utils.randomColor(0.5)',
       pointBorderWidth: 1,
-      data: data,
+      data: fetchData(start, end),
     }]
   },
   options: {
@@ -154,7 +145,7 @@ const config = {
   options: {}
 };*/
 
-const tempChart = new Chart(
+const chart = new Chart(
   document.getElementById('myChart'),
   config
 );
