@@ -52,16 +52,15 @@ for (let x = start; x <= end; x += 1000) {
 function fetchData(x1, x2) {
   console.log("fetchData has been called!");
   const step = Math.max(1, Math.round((x2 - x1) / 100000));
-  const data = [];
+  const data = fetch('/data/get');
+  //const data = [];
   let i = 0;
   while (i < allData.length && allData[i].x < x1) {
     i++;
-    console.log("ii loop");
   }
   while (i < allData.length && allData[i].x <= x2) {
     data.push(allData[i]);
     i += step;
-    console.log("step loop");
   }
   return data;
   console.log("Returned data:");
