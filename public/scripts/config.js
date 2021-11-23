@@ -2,7 +2,6 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
-hej
 
 const labels = [
   '00:05',
