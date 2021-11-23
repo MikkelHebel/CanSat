@@ -51,8 +51,6 @@ for (let x = start; x <= end; x += 1000) {
 
 function fetchData(x1, x2) {
   console.log("fetchData has been called!");
-  console.log("Data before fetching:");
-  console.log(data);
   const step = Math.max(1, Math.round((x2 - x1) / 100000));
   const data = [];
   let i = 0;
