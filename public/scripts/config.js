@@ -56,10 +56,12 @@ function fetchData(x1, x2) {
   let i = 0;
   while (i < allData.length && allData[i].x < x1) {
     i++;
+    console.log("ii loop");
   }
   while (i < allData.length && allData[i].x <= x2) {
     data.push(allData[i]);
     i += step;
+    console.log("step loop");
   }
   return data;
   console.log("Returned data:");
