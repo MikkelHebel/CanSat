@@ -87,6 +87,16 @@ const scales = {
   },
 };
 
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'Temperature',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [],
+  }]
+};
+
 const config = {
   type: 'line',
   data: {
