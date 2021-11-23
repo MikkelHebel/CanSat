@@ -145,7 +145,6 @@ const config = {
   type: 'line',
   data: fetchData(start, end),
   options: {}
-  console.log("Config loaded!");
 };
 
 const tempChart = new Chart(
