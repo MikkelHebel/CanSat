@@ -97,7 +97,7 @@ const config = {
       pointBorderColor: 'randomColor(0.7)',
       pointBackgroundColor: 'Utils.randomColor(0.5)',
       pointBorderWidth: 1,
-      data: fetchData(start, end),
+      data: data,
     }]
   },
   options: {
