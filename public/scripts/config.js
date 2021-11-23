@@ -141,7 +141,7 @@ const data = {
 
 const config = {
   type: 'line',
-  data: data,
+  data: fetchData(start, end),
   options: {}
 };
 
