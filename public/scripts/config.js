@@ -1,3 +1,7 @@
+fetch('/data/get')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
 const labels = [
   '00:05',
   '00:10',
