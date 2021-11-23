@@ -145,7 +145,7 @@ const config = {
   options: {}
 };
 
-const tempChart = new Chart(
+const chart = new Chart(
   document.getElementById('myChart'),
   config
 );
