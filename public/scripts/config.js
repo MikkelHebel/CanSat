@@ -13,12 +13,12 @@ function updateChart() {
   };
 
   fetchData().then(datapoints => {
-    const temperature = datapoints.results.map(function(index){
-      return index.temperature;
+    const minute = datapoints.results.map(function(index){
+      return index.time;
     })
-    console.log(temperature);
+    console.log(minute);
 
-    myChart.config.data.labels = temperature
+    myChart.config.data.labels = minute
     myChart.update();
   });
 }
