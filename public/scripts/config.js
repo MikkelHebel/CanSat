@@ -10,7 +10,7 @@ function choosenChart(){
   const chart = selectedChart.value
   //myChart.data.datasets[0].data = selectedChart.value;
   myChart.data.datasets[0].label = label;
-  updateChart();
+  updateChart(chart);
 }
 
 function updateChart() {
@@ -41,6 +41,8 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
+    console.log("Chart value:");
+    console.log(chart);
     myChart.config.data.datasets[0].data = chart;
     console.log("Chart value:");
     console.log(chart);
