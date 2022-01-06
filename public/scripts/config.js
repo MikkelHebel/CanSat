@@ -11,9 +11,7 @@ function choosenChart(){
   const chart = selectedChart.value
   myChart.config.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
-  console.log("Parsing chart value:");
-  console.log(chart);
-  updateChart(chart);
+  updateChart();
 }
 
 function updateChart() {
@@ -46,7 +44,7 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = chart;
+    myChart.config.data.datasets[0].data = selectedChart;
     myChart.update();
   });
 }
