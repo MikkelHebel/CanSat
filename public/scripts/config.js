@@ -35,6 +35,12 @@ function updateChart() {
   });
 }
 
+const selectedChart = document.getElementById('selectChart');
+selectedChart.addEventListener('change', choosenChart);
+function choosenChart(){
+  console.log(selectedChart.value);
+}
+
 const labels = [
   '00:05',
   '00:10',
