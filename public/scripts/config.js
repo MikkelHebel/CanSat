@@ -79,17 +79,7 @@ const config = {
   data: data,
 };
 
-const config2 = {
-  type: 'line',
-  data: data,
-};
-
 const myChart = new Chart(
   document.getElementById('myChart'),
-  config
-);
-
-const myChart = new Chart(
-  document.getElementById('myChart2'),
   config
 );
