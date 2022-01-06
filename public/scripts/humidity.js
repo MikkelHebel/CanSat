@@ -20,13 +20,22 @@ function updateChart() {
       return index.humidity;
     })
 
-    humidityChart.config.data.labels = minute;
+    humidityChart.config.data.humidityLabels = minute;
     humidityChart.config.data.datasets[0].data = humidity;
     humidityChart.update();
   });
 }
 
-const data = {
+const humidityLabels = [
+  '00:05',
+  '00:10',
+  '00:15',
+  '00:20',
+  '00:25',
+  '00:30',
+];
+
+const humidityData = {
   datasets: [{
     label: 'Humidity',
     data: [65, 59, 80, 81, 56, 55, 40],
@@ -38,7 +47,7 @@ const data = {
 
 const config = {
   type: 'line',
-  data: data,
+  data: humidityData,
 };
 
 const humidityChart = new Chart(
