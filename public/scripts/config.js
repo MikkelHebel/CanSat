@@ -29,7 +29,7 @@ const data = {
 console.log("Data loaded:");
 console.log(data);
 
-const chart = new Chart(
-  document.getElementById('chart'),
+const myChart = new Chart(
+  document.getElementById('myChart'),
   config
 );
