@@ -30,9 +30,7 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = selectedChart.value;
-    console.log("Value:");
-    console.log(selectedChart.value);
+    myChart.config.data.datasets[0].data = altitude;
     myChart.update();
   });
 }
@@ -41,8 +39,8 @@ const selectedChart = document.getElementById('selectChart');
 selectedChart.addEventListener('change', choosenChart);
 function choosenChart(){
   console.log(selectedChart.value);
-  myChart.data.datasets[0].data = selectedChart.value;
-  myChart.data.datasets.label = selectedChart.value;
+  myChart.config.data.datasets[0].data = selectedChart.value;
+  myChart.config.data.datasets.label = selectedChart.value;
   updateChart()
 }
 
