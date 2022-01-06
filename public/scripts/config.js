@@ -34,21 +34,6 @@ const config = {
   data: data,
 };
 
-const actions = [
-  {
-    name: 'Reset zoom',
-    handler(chart) {
-      chart.resetZoom('zoom');
-    }
-  }
-];
-
-module.exports = {
-  actions,
-  config,
-  output: 'console.log output'
-};
-
 const myChart = new Chart(
   document.getElementById('myChart'),
   config
