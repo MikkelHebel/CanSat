@@ -14,3 +14,8 @@ const data = {
     tension: 0.1
   }]
 };
+
+const tempChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);
