@@ -41,7 +41,7 @@ function updateChart() {
 
     myChart.config.data.labels = minute;
     myChart.config.data.datasets[0].data = selectedChart.value;
-    console.log("Selected chart value:")
+    console.log("Selected Chart Value:")
     console.log(selectedChart.value)
     myChart.update();
   });
