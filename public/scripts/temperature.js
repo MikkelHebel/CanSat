@@ -19,18 +19,7 @@ function updateChart() {
     const temperature = datapoints.results.map(function(index){
       return index.temperature;
     })
-    const humidity = datapoints.results.map(function(index){
-      return index.humidity;
-    })
-    const pressure = datapoints.results.map(function(index){
-      return index.pressure;
-    })
-    const altitude = datapoints.results.map(function(index){
-      return index.altitude;
-    })
 
-    console.log(minute);
-    console.log(temperature);
     temperatureChart.config.data.labels = minute;
     temperatureChart.config.data.datasets[0].data = temperature;
     temperatureChart.update();

@@ -19,18 +19,7 @@ function updateChart() {
     const humidity = datapoints.results.map(function(index){
       return index.humidity;
     })
-    const humidity = datapoints.results.map(function(index){
-      return index.humidity;
-    })
-    const pressure = datapoints.results.map(function(index){
-      return index.pressure;
-    })
-    const altitude = datapoints.results.map(function(index){
-      return index.altitude;
-    })
 
-    console.log(minute);
-    console.log(humidity);
     humidityChart.config.data.labels = minute;
     humidityChart.config.data.datasets[0].data = humidity;
     humidityChart.update();
