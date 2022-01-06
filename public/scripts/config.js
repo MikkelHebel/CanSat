@@ -43,6 +43,10 @@ function updateChart() {
     myChart.data.datasets[0].data = selectedChart.value;
     console.log("Selected Chart Value:")
     console.log(selectedChart.value)
+    console.log("Selected Index Value:")
+    console.log(selectedChart.index)
+    console.log("Selected Index Selected Value:")
+    console.log(index.selectedChart.value)
     myChart.update();
   });
 }
