@@ -2,21 +2,26 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
-async function fetchData() {
-  const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
-  const response = await fetch(url);
-  // Wait until the request has been completed
-  const datapoints = await response.json();
-  console.log(datapoints);
-  return datapoints;
-};
+function updateChart() {
+  async function fetchData() {
+    const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
+    const response = await fetch(url);
+    // Wait until the request has been completed
+    const datapoints = await response.json();
+    console.log(datapoints);
+    return datapoints;
+  };
 
-fetchData().then(datapoints => {
-  const minute = datapoints.results.map(function(index){
-    return index.temperature;
-  })
-  console.log(minute);
-});
+  fetchData().then(datapoints => {
+    const temperature = datapoints.results.map(function(index){
+      return index.temperature;
+    })
+    console.log(temperature);
+
+    myChart.config.data.labels = temperature
+    myChart.update();
+  });
+}
 
 const labels = [
   '00:05',
