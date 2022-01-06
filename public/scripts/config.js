@@ -16,9 +16,23 @@ function updateChart() {
     const minute = datapoints.results.map(function(index){
       return index.time;
     })
-    console.log(minute);
+    const temperature = datapoints.results.map(function(index){
+      return index.temperature;
+    })
+    const humidity = datapoints.results.map(function(index){
+      return index.humidity;
+    })
+    const pressure = datapoints.results.map(function(index){
+      return index.pressure;
+    })
+    const altitude = datapoints.results.map(function(index){
+      return index.altitude;
+    })
 
-    myChart.config.data.labels = minute
+    console.log(minute);
+    console.log(temperature);
+    myChart.config.data.labels = minute;
+    myChart.config.data.datasets[0].data = temperature;
     myChart.update();
   });
 }
