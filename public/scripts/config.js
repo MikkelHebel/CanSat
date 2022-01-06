@@ -56,6 +56,12 @@ const labels = [
   '00:20',
   '00:25',
   '00:30',
+  '00:35',
+  '00:40',
+  '00:45',
+  '00:50',
+  '00:55',
+  '01:00',
 ];
 
 const data = {
@@ -73,7 +79,17 @@ const config = {
   data: data,
 };
 
+const config2 = {
+  type: 'line',
+  data: data,
+};
+
 const myChart = new Chart(
   document.getElementById('myChart'),
+  config
+);
+
+const myChart = new Chart(
+  document.getElementById('myChart2'),
   config
 );
