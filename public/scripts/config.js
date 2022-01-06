@@ -42,11 +42,7 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    console.log("Chart value:");
-    console.log(chart);
     myChart.config.data.datasets[0].data = temperature;
-    console.log("Chart value:");
-    console.log(chart);
     myChart.update();
   });
 }
