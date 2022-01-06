@@ -4,14 +4,14 @@ fetch('/data/get')
 
 const selectedChart = document.getElementById('selectedChart');
 selectedChart.addEventListener('change', choosenChart);
-const chart = selectedChart.value
 
 function choosenChart(){
   console.log(selectedChart.value);
   const label = selectedChart.options[selectedChart.selectedIndex].text;
-  //myChart.data.datasets[0].data = selectedChart.value;
+  const chart = selectedChart.value
+  myChart.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
-  updateChart();
+  myChart.update();
 }
 
 function updateChart() {
@@ -42,10 +42,10 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    console.log("Chart value (BEFORE):");
+    console.log("Chart value:");
     console.log(chart);
-    myChart.config.data.datasets[0].data = chart;
-    console.log("Chart value (AFTER):");
+    myChart.config.data.datasets[0].data = temperature;
+    console.log("Chart value:");
     console.log(chart);
     myChart.update();
   });
