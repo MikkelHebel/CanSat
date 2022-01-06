@@ -7,7 +7,7 @@ selectedChart.addEventListener('change', choosenChart);
 function choosenChart(){
   console.log(selectedChart.value);
   const label = selectedChart.options[selectedChart.selectedIndex].text;
-  myChart.data.datasets[0].data = label;
+  //myChart.data.datasets[0].data = selectedChart.value;
   myChart.data.datasets[0].label = label;
   updateChart();
 }
@@ -40,7 +40,9 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = label;
+    myChart.config.data.datasets[0].data = selectedChart.value;
+    console.log("Selected chart value:")
+    console.log(selectedChart.value)
     myChart.update();
   });
 }
