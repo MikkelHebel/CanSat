@@ -16,17 +16,26 @@ function updateChart() {
     const minute = datapoints.results.map(function(index){
       return index.time;
     })
+    const temperature = datapoints.results.map(function(index){
+      return index.temperature;
+    })
     const humidity = datapoints.results.map(function(index){
       return index.humidity;
     })
+    const pressure = datapoints.results.map(function(index){
+      return index.pressure;
+    })
+    const altitude = datapoints.results.map(function(index){
+      return index.altitude;
+    })
 
-    humidityChart.humidityConfig.data.humidityLabels = minute;
-    humidityChart.humidityConfig.data.datasets[0].data = humidity;
-    humidityChart.update();
+    temperatureChart.config.data.labels = minute;
+    temperatureChart.config.data.datasets[0].data = temperature;
+    temperatureChart.update();
   });
 }
 
-const humidityLabels = [
+const labels = [
   '00:05',
   '00:10',
   '00:15',
@@ -35,9 +44,9 @@ const humidityLabels = [
   '00:30',
 ];
 
-const humidityData = {
+const data = {
   datasets: [{
-    label: 'Humidity',
+    label: 'Temperature',
     data: [65, 59, 80, 81, 56, 55, 40],
     fill: false,
     borderColor: 'rgb(75, 192, 192)',
@@ -45,12 +54,12 @@ const humidityData = {
   }]
 };
 
-const humidityConfig = {
+const config = {
   type: 'line',
-  data: humidityData,
+  data: data,
 };
 
-const humidityChart = new Chart(
-  document.getElementById('humidityChart'),
-  humidityConfig
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
 );
