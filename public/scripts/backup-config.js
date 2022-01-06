@@ -1,8 +1,8 @@
 // https://www.chartjs.org/chartjs-plugin-zoom/samples/fetch-data.html
 
-//fetch('/data/get')
-//  .then(response => response.json())
-//  .then(data => console.log(data));
+fetch('/data/get')
+  .then(response => response.json())
+  .then(data => console.log(data));
 
 const zoomOptions = {
   limits: {
@@ -151,7 +151,24 @@ const data = {
 const config = {
   type: 'line',
   data: fetchData(start, end),
-  options: {}
+  options: {
+    scales: scales,
+    plugins: {
+      zoom: zoomOptions,
+      title: {
+        display: true,
+        position: 'bottom',
+        text: (ctx) => zoomStatus(ctx.chart)
+      }
+    },
+    transitions: {
+      zoom: {
+        animation: {
+          duration: 100
+        }
+      }
+    }
+  }
 };
 
 const tempChart = new Chart(
