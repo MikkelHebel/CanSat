@@ -30,7 +30,7 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = temperature;
+    myChart.config.data.datasets[0].data = selectChart.value;
     myChart.update();
   });
 }
