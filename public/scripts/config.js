@@ -2,47 +2,6 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
-  // <block:data:2>
-  const start = new Date().valueOf();
-  const end = start + 1000 * 60 * 60 * 24 * 2;
-  const allData = [];
-  let y = 100;
-  for (let x = start; x <= end; x += 1000) {
-    y += 5 - Math.random() * 10;
-    allData.push({x, y});
-  }
-
-  function fetchData(x1, x2) {
-    const step = Math.max(1, Math.round((x2 - x1) / 100000));
-    const data = [];
-    let i = 0;
-    while (i < allData.length && allData[i].x < x1) {
-      i++;
-    }
-    while (i < allData.length && allData[i].x <= x2) {
-      data.push(allData[i]);
-      i += step;
-    }
-    console.log("Returned data:");
-    console.log(data);
-    return data;
-  }
-  // </block:data>
-
-  // <block:fetch:1>
-  let timer;
-  function startFetch({chart}) {
-    const {min, max} = chart.scales.x;
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      console.log('Fetched data between ' + min + ' and ' + max);
-      chart.data.datasets[0].data = fetchData(min, max);
-      chart.stop(); // make sure animations are not running
-      chart.update('none');
-    }, 500);
-  }
-  // </block:fetch>
-
 const labels = [
   '00:05',
   '00:10',
@@ -53,7 +12,6 @@ const labels = [
 ];
 
 const data = {
-  labels: labels,
   datasets: [{
     label: 'Temperature chart!',
     data: [65, 59, 80, 81, 56, 55, 40],
@@ -66,6 +24,21 @@ const data = {
 const config = {
   type: 'line',
   data: fetchData(start, end),
+};
+
+const actions = [
+  {
+    name: 'Reset zoom',
+    handler(chart) {
+      chart.resetZoom('zoom');
+    }
+  }
+];
+
+module.exports = {
+  actions,
+  config,
+  output: 'console.log output'
 };
 
 const myChart = new Chart(
