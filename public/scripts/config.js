@@ -2,6 +2,14 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
+async function fetchData() {
+  const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
+  const response = await fetch(url);
+  // Wait until the request has been completed
+  const datapoints = await response.json();
+  console.log(datapoints);
+};
+
 const labels = [
   '00:05',
   '00:10',
