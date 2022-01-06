@@ -17,8 +17,6 @@ function choosenChart(){
 function updateChart() {
   console.log("selected value:");
   console.log(selectedChart.value);
-  console.log("selectedChart text:");
-  console.log(selectedChart.options[selectedChart.selectedIndex].text);
   async function fetchData() {
     const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
     const response = await fetch(url);
@@ -46,7 +44,7 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = selectedChart;
+    myChart.config.data.datasets[0].data = selectedChart.value;
     myChart.update();
   });
 }
