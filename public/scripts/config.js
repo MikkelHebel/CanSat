@@ -39,6 +39,7 @@ const selectedChart = document.getElementById('selectChart');
 selectedChart.addEventListener('change', choosenChart);
 function choosenChart(){
   console.log(selectedChart.value);
+  myChart.data.datasets[0].data = selectChart.value
 }
 
 const labels = [
