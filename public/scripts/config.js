@@ -7,7 +7,8 @@ selectedChart.addEventListener('change', choosenChart);
 function choosenChart(){
   console.log(selectedChart.value);
   const label = selectedChart.options[selectedChart.selectedIndex].text;
-  myChart.data.datasets[0].data = selectedChart.value;
+  const chart = selectedChart.value;
+  myChart.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
   updateChart();
 }
