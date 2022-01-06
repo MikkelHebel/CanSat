@@ -11,10 +11,17 @@ function choosenChart(){
   const chart = selectedChart.value
   myChart.config.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
-  myChart.update();
+  console.log("Parsing chart value:");
+  console.log(chart);
+  updateChart(chart);
 }
 
 function updateChart() {
+  if (chart === undefined) {
+    chart = temperature;
+  }
+  console.log("Running updateChart function");
+  console.log(chart)
   async function fetchData() {
     const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
     const response = await fetch(url);
@@ -42,7 +49,7 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = temperature;
+    myChart.config.data.datasets[0].data = chart;
     myChart.update();
   });
 }
