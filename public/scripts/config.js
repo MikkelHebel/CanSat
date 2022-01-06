@@ -9,7 +9,7 @@ function choosenChart(){
   const label = selected.options[selectedChart.selectedIndex].text;
   myChart.data.datasets[0].data = selectedChart.value;
   myChart.data.datasets[0].label = label;
-  updateChart()
+  updateChart();
 }
 
 function updateChart() {
