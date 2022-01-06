@@ -15,8 +15,10 @@ function choosenChart(){
 }
 
 function updateChart() {
-  console.log("Running updateChart function");
-  console.log(selectedChart)
+  console.log("selected value:");
+  console.log(selectedChart.value);
+  console.log("selectedChart text:");
+  console.log(selectedChart.options[selectedChart.selectedIndex].text);
   async function fetchData() {
     const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
     const response = await fetch(url);
