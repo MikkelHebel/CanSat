@@ -2,12 +2,13 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
-const selectedChart = document.getElementById('selectChart');
+const selectedChart = document.getElementById('selectedChart');
 selectedChart.addEventListener('change', choosenChart);
 function choosenChart(){
   console.log(selectedChart.value);
-  myChart.config.data.datasets[0].data = selectedChart.value;
-  myChart.config.data.datasets.label = selectedChart.value;
+  const label = selected.options[selectedChart.selectedIndex].text;
+  myChart.data.datasets[0].data = selectedChart.value;
+  myChart.data.datasets[0].label = label;
   updateChart()
 }
 
