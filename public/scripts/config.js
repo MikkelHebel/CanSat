@@ -2,6 +2,15 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
+const selectedChart = document.getElementById('selectChart');
+selectedChart.addEventListener('change', choosenChart);
+function choosenChart(){
+  console.log(selectedChart.value);
+  myChart.config.data.datasets[0].data = selectedChart.value;
+  myChart.config.data.datasets.label = selectedChart.value;
+  updateChart()
+}
+
 function updateChart() {
   async function fetchData() {
     const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
@@ -30,18 +39,9 @@ function updateChart() {
     })
 
     myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = altitude;
+    myChart.config.data.datasets[0].data = selectedChart.value;
     myChart.update();
   });
-}
-
-const selectedChart = document.getElementById('selectChart');
-selectedChart.addEventListener('change', choosenChart);
-function choosenChart(){
-  console.log(selectedChart.value);
-  myChart.config.data.datasets[0].data = selectedChart.value;
-  myChart.config.data.datasets.label = selectedChart.value;
-  updateChart()
 }
 
 const labels = [
