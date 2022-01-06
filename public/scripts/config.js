@@ -23,7 +23,7 @@ const data = {
   }]
 };
 
-const tempChart = new Chart(
-  document.getElementById('myChart'),
+const chart = new Chart(
+  document.getElementById('chart'),
   config
 );
