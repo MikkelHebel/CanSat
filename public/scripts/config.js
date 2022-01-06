@@ -17,9 +17,6 @@ function choosenChart(){
 }
 
 function updateChart() {
-  if (chart === undefined) {
-    chart = temperature;
-  }
   console.log("Running updateChart function");
   console.log(chart)
   async function fetchData() {
