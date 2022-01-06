@@ -23,7 +23,7 @@ const data = {
 
 const config = {
   type: 'line',
-  data: fetchData(start, end),
+  data: data,
 };
 
 const actions = [
