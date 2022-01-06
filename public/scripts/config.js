@@ -40,6 +40,8 @@ selectedChart.addEventListener('change', choosenChart);
 function choosenChart(){
   console.log(selectedChart.value);
   myChart.data.datasets[0].data = selectChart.value;
+  myChart.data.datasets.label = selectChart.value;
+  myChart.update();
 }
 
 const labels = [
