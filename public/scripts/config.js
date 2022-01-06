@@ -8,7 +8,15 @@ async function fetchData() {
   // Wait until the request has been completed
   const datapoints = await response.json();
   console.log(datapoints);
+  return datapoints;
 };
+
+fetchData().then(datapoints => {
+  const minute = datapoints.results.map(function(index){
+    return index.temperature;
+  })
+  console.log(minute);
+});
 
 const labels = [
   '00:05',
