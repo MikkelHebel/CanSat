@@ -1,10 +1,3 @@
-const config = {
-  type: 'line',
-  data: data,
-};
-console.log("Config loaded:");
-console.log(config);
-
 const labels = [
   '00:05',
   '00:10',
@@ -13,8 +6,6 @@ const labels = [
   '00:25',
   '00:30',
 ];
-console.log("Labels loaded:");
-console.log(labels);
 
 const data = {
   labels: labels,
@@ -26,8 +17,11 @@ const data = {
     tension: 0.1
   }]
 };
-console.log("Data loaded:");
-console.log(data);
+
+const config = {
+  type: 'line',
+  data: data,
+};
 
 const myChart = new Chart(
   document.getElementById('myChart'),
