@@ -9,7 +9,7 @@ function choosenChart(){
   console.log(selectedChart.value);
   const label = selectedChart.options[selectedChart.selectedIndex].text;
   const chart = selectedChart.value
-  myChart.data.datasets[0].data = chart;
+  myChart.config.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
   myChart.update();
 }
