@@ -29,9 +29,9 @@ function updateChart() {
       return index.altitude;
     })
 
-    temperatureChart.config.data.labels = minute;
-    temperatureChart.config.data.datasets[0].data = temperature;
-    temperatureChart.update();
+    myChart.config.data.labels = minute;
+    myChart.config.data.datasets[0].data = temperature;
+    myChart.update();
   });
 }
 
