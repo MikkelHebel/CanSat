@@ -11,6 +11,7 @@ function choosenChart(){
   const chart = selectedChart.value
   myChart.config.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
+  fetchData();
   if (chart === "temperature") {
     myChart.config.data.datasets[0].data = "temperature";
   }
@@ -54,11 +55,10 @@ function updateChart() {
     const altitude = datapoints.results.map(function(index){
       return index.altitude;
     })
-
-    myChart.config.data.labels = minute;
-    myChart.config.data.datasets[0].data = temperature;
-    myChart.update();
   });
+  myChart.config.data.labels = minute;
+  myChart.config.data.datasets[0].data = temperature;
+  myChart.update();
 }
 
 const labels = [
