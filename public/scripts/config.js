@@ -7,21 +7,31 @@ selectedChart.addEventListener('change', choosenChart);
 
 function choosenChart(){
   console.log(selectedChart.value);
-  const minute = datapoints.results.map(function(index){
-    return index.time;
-  })
-  const temperature = datapoints.results.map(function(index){
-    return index.temperature;
-  })
-  const humidity = datapoints.results.map(function(index){
-    return index.humidity;
-  })
-  const pressure = datapoints.results.map(function(index){
-    return index.pressure;
-  })
-  const altitude = datapoints.results.map(function(index){
-    return index.altitude;
-  })
+  async function fetchData() {
+    const url = 'https://shielded-bayou-08572.herokuapp.com/data/get';
+    const response = await fetch(url);
+    // Wait until the request has been completed
+    const datapoints = await response.json();
+    console.log(datapoints);
+    return datapoints;
+  };
+
+  fetchData().then(datapoints => {
+    const minute = datapoints.results.map(function(index){
+      return index.time;
+    })
+    const temperature = datapoints.results.map(function(index){
+      return index.temperature;
+    })
+    const humidity = datapoints.results.map(function(index){
+      return index.humidity;
+    })
+    const pressure = datapoints.results.map(function(index){
+      return index.pressure;
+    })
+    const altitude = datapoints.results.map(function(index){
+      return index.altitude;
+    })
   const label = selectedChart.options[selectedChart.selectedIndex].text;
   const chart = selectedChart.value
   myChart.config.data.datasets[0].data = chart;
@@ -38,6 +48,7 @@ function choosenChart(){
   if (chart === "altitude") {
     myChart.config.data.datasets[0].data = "altitude";
   }
+  });
   myChart.update();
 }
 
