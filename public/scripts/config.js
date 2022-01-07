@@ -11,16 +11,16 @@ function choosenChart(){
   const chart = selectedChart.value
   myChart.config.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
-  if (chart === temperature) {
+  if (chart === "temperature") {
     myChart.config.data.datasets[0].data = temperature;
   }
-  if (chart === humidity) {
+  if (chart === "humidity") {
     myChart.config.data.datasets[0].data = humidity;
   }
-  if (chart === pressure) {
+  if (chart === "pressure") {
     myChart.config.data.datasets[0].data = pressure;
   }
-  if (chart === altitude) {
+  if (chart === "altitude") {
     myChart.config.data.datasets[0].data = altitude;
   }
   myChart.update();
