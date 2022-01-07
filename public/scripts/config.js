@@ -3,7 +3,7 @@ fetch('/data/get')
   .then(data => console.log(data));
 
 const selectedChart = document.getElementById('selectedChart');
-selectedChart.addEventListener('change', choosenChart);
+selectedChart.addEventListener('change', updateChart);
 
 /*function choosenChart(){
   console.log(selectedChart.value);
