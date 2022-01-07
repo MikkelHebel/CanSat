@@ -10,7 +10,7 @@ const zoomOptions = {
     enabled: true,
     mode: 'x',
     modifierKey: 'ctrl',
-    onPanComplete: startFetch
+    onPanComplete: updateChart
   },
   zoom: {
     wheel: {
@@ -23,7 +23,7 @@ const zoomOptions = {
       enabled: true
     },
     mode: 'x',
-    onZoomComplete: startFetch
+    onZoomComplete: updateChart
   }
 };
 
