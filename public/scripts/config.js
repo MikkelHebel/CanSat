@@ -2,6 +2,56 @@ fetch('/data/get')
   .then(response => response.json())
   .then(data => console.log(data));
 
+const zoomOptions = {
+  limits: {
+    x: {min: 'original', max: 'original', minRange: 60 * 1000},
+  },
+  pan: {
+    enabled: true,
+    mode: 'x',
+    modifierKey: 'ctrl',
+    onPanComplete: startFetch
+  },
+  zoom: {
+    wheel: {
+      enabled: true,
+    },
+    drag: {
+      enabled: true,
+    },
+    pinch: {
+      enabled: true
+    },
+    mode: 'x',
+    onZoomComplete: startFetch
+  }
+};
+
+const scales = {
+  x: {
+    position: 'bottom',
+    min: start,
+    max: end,
+    type: 'time',
+    ticks: {
+      autoSkip: true,
+      autoSkipPadding: 50,
+      maxRotation: 0
+    },
+    time: {
+      displayFormats: {
+        hour: 'HH:mm',
+        minute: 'HH:mm',
+        second: 'HH:mm:ss'
+      }
+    }
+  },
+  y: {
+    type: 'linear',
+    position: 'left',
+  },
+};
+
 const selectedChart = document.getElementById('selectedChart');
 selectedChart.addEventListener('change', updateChart);
 
@@ -84,14 +134,28 @@ const data = {
 const config = {
   type: 'line',
   data: data,
+  options: {
+    scales: scales,
+    plugins: {
+      zoom: zoomOptions,
+      title: {
+        display: true,
+        position: 'bottom',
+        text: (ctx) => zoomStatus(ctx.chart)
+      }
+    },
+    transitions: {
+      zoom: {
+        animation: {
+          duration: 100
+        }
+      }
+    }
+  }
+};
 };
 
 const myChart = new Chart(
   document.getElementById('myChart'),
-  config
-);
-
-const myChart2 = new Chart(
-  document.getElementById('myChart2'),
   config
 );
