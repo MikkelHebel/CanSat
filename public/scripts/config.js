@@ -7,11 +7,25 @@ selectedChart.addEventListener('change', choosenChart);
 
 function choosenChart(){
   console.log(selectedChart.value);
+  const minute = datapoints.results.map(function(index){
+    return index.time;
+  })
+  const temperature = datapoints.results.map(function(index){
+    return index.temperature;
+  })
+  const humidity = datapoints.results.map(function(index){
+    return index.humidity;
+  })
+  const pressure = datapoints.results.map(function(index){
+    return index.pressure;
+  })
+  const altitude = datapoints.results.map(function(index){
+    return index.altitude;
+  })
   const label = selectedChart.options[selectedChart.selectedIndex].text;
   const chart = selectedChart.value
   myChart.config.data.datasets[0].data = chart;
   myChart.data.datasets[0].label = label;
-  fetchData();
   if (chart === "temperature") {
     myChart.config.data.datasets[0].data = "temperature";
   }
@@ -55,10 +69,11 @@ function updateChart() {
     const altitude = datapoints.results.map(function(index){
       return index.altitude;
     })
+
+    myChart.config.data.labels = minute;
+    myChart.config.data.datasets[0].data = temperature;
+    myChart.update();
   });
-  myChart.config.data.labels = minute;
-  myChart.config.data.datasets[0].data = temperature;
-  myChart.update();
 }
 
 const labels = [
